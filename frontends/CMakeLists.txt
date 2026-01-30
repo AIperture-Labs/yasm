@@ -1,3 +1,3 @@
-ADD_SUBDIRECTORY(yasm)
-ADD_SUBDIRECTORY(tasm)
-ADD_SUBDIRECTORY(vsyasm)
+add_subdirectory(yasm)
+add_subdirectory(tasm)
+add_subdirectory(vsyasm)

@@ -1,34 +1,34 @@
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_CUSTOM_COMMAND(
+add_custom_command(
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/license.c
     COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/genstring.py
-        license_msg
-        ${CMAKE_CURRENT_BINARY_DIR}/license.c
-        ${CMAKE_SOURCE_DIR}/COPYING
-    MAIN_DEPENDENCY ${CMAKE_SOURCE_DIR}/COPYING
+    license_msg
+    ${CMAKE_CURRENT_BINARY_DIR}/license.c
+    ${YASM_PROJECT_DIRDIR}/COPYING
+    MAIN_DEPENDENCY ${YASM_PROJECT_DIR}/COPYING
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/genstring.py
-    )
+)
 
-SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-IF(BUILD_SHARED_LIBS)
-    ADD_EXECUTABLE(yasm
+if(BUILD_SHARED_LIBS)
+    add_executable(yasm
         yasm.c
         yasm-options.c
         yasm-plugin.c
-        )
-    TARGET_LINK_LIBRARIES(yasm libyasm ${LIBDL})
-ELSE(BUILD_SHARED_LIBS)
-    ADD_EXECUTABLE(yasm
+    )
+    target_link_libraries(yasm libyasm ${LIBDL})
+else()
+    add_executable(yasm
         yasm.c
         yasm-options.c
-        )
-    TARGET_LINK_LIBRARIES(yasm yasmstd libyasm)
-ENDIF(BUILD_SHARED_LIBS)
-
-SET_SOURCE_FILES_PROPERTIES(yasm.c PROPERTIES
-    OBJECT_DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/license.c
     )
+    target_link_libraries(yasm yasmstd libyasm)
+endif()
 
-INSTALL(TARGETS yasm RUNTIME DESTINATION bin)
+set_source_files_properties(yasm.c PROPERTIES
+    OBJECT_DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/license.c
+)
+
+install(TARGETS yasm RUNTIME DESTINATION bin)
