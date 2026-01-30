@@ -1,1 +1,1 @@
-ADD_SUBDIRECTORY(modules)
+add_subdirectory(modules)
