@@ -1,3 +1,3 @@
-YASM_ADD_MODULE(listfmt_nasm
+yasm_add_module(listfmt_nasm
     listfmts/nasm/nasm-listfmt.c
-    )
+)

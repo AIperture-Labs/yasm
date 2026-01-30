@@ -1,3 +1,3 @@
-YASM_ADD_MODULE(preproc_cpp
+yasm_add_module(preproc_cpp
     preprocs/cpp/cpp-preproc.c
-    )
+)

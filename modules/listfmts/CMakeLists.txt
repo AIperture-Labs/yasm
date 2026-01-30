@@ -1,1 +1,1 @@
-INCLUDE(listfmts/nasm/CMakeLists.txt)
+include(listfmts/nasm/CMakeLists.txt)

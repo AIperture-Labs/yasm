@@ -1,2 +1,2 @@
-INCLUDE(arch/lc3b/CMakeLists.txt)
-INCLUDE(arch/x86/CMakeLists.txt)
+include(arch/lc3b/cmakelists.txt)
+include(arch/x86/CMakeLists.txt)

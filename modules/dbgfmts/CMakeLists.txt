@@ -1,4 +1,4 @@
-INCLUDE(dbgfmts/codeview/CMakeLists.txt)
-INCLUDE(dbgfmts/dwarf2/CMakeLists.txt)
-INCLUDE(dbgfmts/null/CMakeLists.txt)
-INCLUDE(dbgfmts/stabs/CMakeLists.txt)
+include(dbgfmts/codeview/CMakeLists.txt)
+include(dbgfmts/dwarf2/CMakeLists.txt)
+include(dbgfmts/null/CMakeLists.txt)
+include(dbgfmts/stabs/CMakeLists.txt)

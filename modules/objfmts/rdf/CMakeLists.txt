@@ -1,3 +1,3 @@
-YASM_ADD_MODULE(objfmt_rdf
+yasm_add_module(objfmt_rdf
     objfmts/rdf/rdf-objfmt.c
-    )
+)

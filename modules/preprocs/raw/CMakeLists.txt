@@ -1,3 +1,3 @@
-YASM_ADD_MODULE(preproc_raw
+yasm_add_module(preproc_raw
     preprocs/raw/raw-preproc.c
-    )
+)
