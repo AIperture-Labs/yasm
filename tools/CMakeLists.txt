@@ -1,3 +1,3 @@
-ADD_SUBDIRECTORY(genmacro)
-ADD_SUBDIRECTORY(genperf)
-ADD_SUBDIRECTORY(re2c)
+add_subdirectory(genmacro)
+add_subdirectory(genperf)
+add_subdirectory(re2c)

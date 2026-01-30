@@ -1,6 +1,6 @@
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-ADD_LIBRARY(libyasm
+add_library(libyasm
     assocdat.c
     bitvect.c
     bc-align.c
@@ -30,25 +30,25 @@ ADD_LIBRARY(libyasm
     value.c
     xmalloc.c
     xstrdup.c
-    )
-IF(BUILD_SHARED_LIBS)
-    SET_TARGET_PROPERTIES(libyasm PROPERTIES
+)
+if(BUILD_SHARED_LIBS)
+    set_target_properties(libyasm PROPERTIES
         OUTPUT_NAME "yasm"
         COMPILE_FLAGS -DYASM_LIB_SOURCE
-        )
-ELSE(BUILD_SHARED_LIBS)
-    SET_TARGET_PROPERTIES(libyasm PROPERTIES
+    )
+else()
+    set_target_properties(libyasm PROPERTIES
         COMPILE_FLAGS -DYASM_LIB_SOURCE
-        )
-ENDIF(BUILD_SHARED_LIBS)
+    )
+endif()
 
-INSTALL(TARGETS libyasm
+install(TARGETS libyasm
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
-    )
+)
 
-INSTALL(FILES
+install(FILES
     arch.h
     assocdat.h
     bitvect.h
@@ -77,4 +77,4 @@ INSTALL(FILES
     valparam.h
     value.h
     DESTINATION include/libyasm
-    )
+)

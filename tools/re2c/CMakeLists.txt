@@ -8,4 +8,4 @@ add_executable(re2c
     mbo_getopt.c
     substr.c
     translate.c
-    )
+)
